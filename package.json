@@ -1,0 +1,29 @@
+{
+  "name": "warehouse-console",
+  "version": "1.0.0",
+  "description": "warehouse-console: A Bootstrap And AngularJs project",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-angular-templatecache": "^1.6.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-rev-mtime": "0.0.4",
+    "gulp-util": "^3.0.6",
+    "bluebird": "3.1.1",
+    "cordova-app-loader": "0.17.0",
+    "cordova-promise-fs": "0.13.0"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-dialogs",
+    "cordova-plugin-file",
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-app-version",
+    "cordova-plugin-file-opener2",
+    "org.apache.cordova.network-information"
+  ],
+  "cordovaPlatforms": [
+    "android"
+  ]
+}

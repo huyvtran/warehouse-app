@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <span class="navbar-brand">退货结果</span>
+            <button type="button" class="btn btn-default navbar-btn" ui-sref="refund-list" style="padding-left: 10px;">
+                <span class="glyphicon glyphicon-menu-left back-left" aria-hidden="true"></span>返回
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+	<!--  退货成功 -->
+	<div class="row" ng-if="resultStatusValue && resultStatusValue == 1">
+		<br>
+		<br>
+		<br>
+		<div class="alert alert-success" role="alert">
+			<span class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="margin-right: 7px;top: 3px;"></span>提交退货成功
+		</div>
+		<br>
+		<br>
+		<div class="text-btn-center">
+			<button class="btn btn-lg btn-default" style="width: 70%;" ui-sref="home">返回首页</button>
+		</div>
+	</div>
+
+	<!-- 退货失败 -->
+	<div class="row" ng-if="resultStatusValue && resultStatusValue == 0">
+		<br>
+		<br>
+		<br>
+		<div class="alert alert-danger" role="alert">
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="margin-right: 7px;top: 3px;"></span>退货操作失败
+		</div>
+		<br>
+		<br>
+		<div class="text-btn-center">
+			<button class="btn btn-lg btn-default" style="width: 70%;" ui-sref="refund-list">返回重新退货</button>
+		</div>
+	</div>
+</div>
