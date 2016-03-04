@@ -9,7 +9,9 @@
  */
 angular
 	.module('warehouseApp', [
+        'ionic',
         'templatesCache',
+        'ngCordova',
         'oc.lazyLoad',
         'angular-loading-bar',
         'ui.router',
@@ -17,41 +19,41 @@ angular
         'ngTouch'
     ])
     .constant('apiConfig', {
-        "host": "http://warehouse.canguanwuyou.cn"
+        //"host": "http://warehouse.canguanwuyou.cn"
         // "host": "http://139.129.15.29"  //线上
         // "host": "http://115.28.64.174"  //测试
-        // "host": ""  //本地
+         "host": ""  //本地
     })
     .run(function () {
-        var fs = new CordovaPromiseFS({
-            Promise: Promise
-        });
-
-        var loader = new CordovaAppLoader({
-            fs: fs,
-            serverRoot: 'http://warehouse.canguanwuyou.cn/warehouse/',
-            localRoot: 'app',
-            cacheBuster: true, 
-            checkTimeout: 10000,
-            mode: 'mirror',
-            manifest: 'manifest.json' + "?" + Date.now()
-        });
-
-        function check(){
-            loader.check()
-                .then(function(){
-                    console.log("-----into check ---------");
-                    return loader.download();
-                })
-                .then(function(){
-                    console.log("--------into download ---------");
-                    return loader.update();
-                },function(err){
-                    console.error('Auto-update error:',err);
-                });
-        }
-
-        check();
+        //var fs = new CordovaPromiseFS({
+        //    Promise: Promise
+        //});
+        //
+        //var loader = new CordovaAppLoader({
+        //    fs: fs,
+        //    serverRoot: 'http://warehouse.canguanwuyou.cn/warehouse/',
+        //    localRoot: 'app',
+        //    cacheBuster: true,
+        //    checkTimeout: 10000,
+        //    mode: 'mirror',
+        //    manifest: 'manifest.json' + "?" + Date.now()
+        //});
+        //
+        //function check(){
+        //    loader.check()
+        //        .then(function(){
+        //            console.log("-----into check ---------");
+        //            return loader.download();
+        //        })
+        //        .then(function(){
+        //            console.log("--------into download ---------");
+        //            return loader.update();
+        //        },function(err){
+        //            console.error('Auto-update error:',err);
+        //        });
+        //}
+        //
+        //check();
     })
 	.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$locationProvider', '$httpProvider', '$provide',
         function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $locationProvider, $httpProvider, $provide) {
