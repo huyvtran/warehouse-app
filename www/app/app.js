@@ -34,7 +34,7 @@ angular
                     if (versionCode < newVersionCode) {
                         ConfirmModalDialogService.AsyncConfirmYesNo("版本有更新，是否需要升级？",
                             function () {
-                                var url = "http://115.28.66.10:9090/cgwy_warehouse.apk";
+                                var url = "http://115.28.66.10:9090/download/cgwy_warehouse.apk";
                                 var targetPath = cordova.file.externalApplicationStorageDirectory + 'cgwy/cgwy_warehouse_' + newVersionCode + '.apk';
                                 var trustHosts = true;
                                 var options = {};
