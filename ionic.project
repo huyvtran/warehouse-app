@@ -4,7 +4,7 @@
   "proxies": [
     {
       "path": "/api",
-      "proxyUrl": "http://115.28.64.174/api/"
+      "proxyUrl": "http://115.28.64.174/admin/api/"
     },
     {
       "path":"/admin/api/",
