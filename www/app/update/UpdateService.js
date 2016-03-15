@@ -6,7 +6,8 @@ angular.module('warehouseApp')
 
         var loader = new CordovaAppLoader({
             fs: fs,
-            serverRoot: 'http://warehouse.canguanwuyou.cn/warehouse/',
+            //serverRoot: 'http://warehouse.canguanwuyou.cn/warehouse/',
+            serverRoot:'http://115.28.66.10:8089/',
             localRoot: 'app',
             cacheBuster: true, // make sure we're not downloading cached files.
             checkTimeout: 10000, // timeout for the "check" function - when you loose internet connection
