@@ -4,11 +4,11 @@
   "proxies": [
     {
       "path": "/api",
-      "proxyUrl": "http://115.28.64.174/admin/api/"
+      "proxyUrl": "http://warehouse.canguanwuyou.cn/admin/api/"
     },
     {
       "path":"/admin/api/",
-      "proxyUrl": "http://115.28.64.174/admin/api/"
+      "proxyUrl": "http://warehouse.canguanwuyou.cn/admin/api/"
     }
   ]
 }
