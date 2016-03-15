@@ -46,23 +46,27 @@ angular.module('warehouseApp')
             }
         });
 
-        $http({
-            url: apiConfig.host + "/admin/api/stock/willShelfList",
-            method: "GET",
-            params: $scope.stockSearchForm,
-            headers: {'Content-Type': 'application/json;charset=UTF-8'}
-        }).success(function (data, status, headers, config) {
-            $scope.stocks = data.content;
+        function search(){
+            $http({
+                url: apiConfig.host + "/admin/api/stock/willShelfList",
+                method: "GET",
+                params: $scope.stockSearchForm,
+                headers: {'Content-Type': 'application/json;charset=UTF-8'}
+            }).success(function (data, status, headers, config) {
+                $scope.stocks = data.content;
 
-            $scope.page.itemsPerPage = data.pageSize;
-            $scope.page.totalItems = data.total;
-            $scope.page.currentPage = data.page + 1;
-        }).error(function (data, status) {
-            ConfirmModalDialogService.AsyncAlert("获取数据失败...");
-        });
+                $scope.page.itemsPerPage = data.pageSize;
+                $scope.page.totalItems = data.total;
+                $scope.page.currentPage = data.page + 1;
+            }).error(function (data, status) {
+                ConfirmModalDialogService.AsyncAlert("获取数据失败...");
+            });
+            $scope.stockSearchForm.pageSize = $scope.page.itemsPerPage;
+        }
 
-        $scope.stockSearchForm.pageSize = $scope.page.itemsPerPage;
 
+
+        search();
         $scope.resetPageAndSearch = function () {
             $scope.stockSearchForm.page = 0;
             $scope.stockSearchForm.pageSize = 30;
@@ -74,7 +78,8 @@ angular.module('warehouseApp')
             $scope.stockSearchForm.page = $scope.page.currentPage - 1;
             $scope.stockSearchForm.pageSize = $scope.page.itemsPerPage;
 
-            $location.search($scope.stockSearchForm);
+            //$location.search($scope.stockSearchForm);
+            search();
         }
 
         $scope.$watch('stock.shelfCode', function (newVal) {
